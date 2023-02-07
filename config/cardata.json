@@ -1,0 +1,106 @@
+{
+  "id": "212121",
+  "vin": "101",
+  "type": "vehicle_state",
+  "sub_type": "info",
+  "data": {
+    "level": "0",
+    "speed": "54",
+    "trunk": "1",
+    "mileage": "22",
+    "trip": "18",
+    "driveMode":"p",
+    "gear" : "y",
+    "current_temp": "18",
+    "ac": "1",
+    "sun_roof_state": "3",
+    "engine": "111144",
+    "hazard": "0",
+    "min_temp": "16",
+    "max_temp": "30",
+    "bonet": "1",
+    "vehicle_doors": {
+      "child_lock": "1",
+      "door": {
+        "door_front_left": "1",
+        "door_front_right": "0",
+        "door_rear_left": "1",
+        "door_rear_right": "0"
+      },
+      "window": {
+        "front": {
+          "left": "10",
+          "right": "0"
+        },
+        "rear": {
+          "left": "10",
+          "right": "0"
+        }
+      }
+    },
+    "lights": {
+      "head": "OFF"
+    },
+    "side_mirror": {
+      "left": "0",
+      "right": "10"
+    },
+    "battery": {
+      "sumVolt": "13.8",
+      "current": "7.5",
+      "temperature": "4.2",
+      "voltage": "23.0",
+      "mode": "charging",
+      "soc": "20",
+      "soh": "23"
+    },
+    "hvac": {
+      "defrost_front": "1",
+      "defrost_rear": "1",
+      "air_circulation": "0",
+      "front": {
+        "ac_state": "1",
+        "ac_vent_flow": "1",
+        "temperature": "25"
+      },
+      "rear": {
+        "ac_state": "0",
+        "ac_vent_flow": "4",
+        "temperature": "26"
+      }
+    },
+    "location": {
+      "current_location": {
+        "long": "18.520430",
+        "lat": "73.856743"
+      },
+      "routes": {
+        "destLocation": {
+          "long": "51.507351",
+          "lat": "-0.127758"
+        },
+        "start_location": {
+          "long": "51.507351",
+          "lat": "-0.127758"
+        },
+        "stops": [
+          {
+            "long": "28.7975",
+            "lat": "76.1322"
+          },
+          {
+            "long": "18.520430",
+            "lat": "73.856743"
+          }
+        ]
+      },
+      "geofence": {
+        "point": {
+          "lat": "51.507351",
+          "long": "-0.127758"
+        },
+        "radius": "500"
+      }
+    }
+  }
+}

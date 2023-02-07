@@ -1,0 +1,90 @@
+(We have to run build /example)
+
+**************Simple Service-client****************************************
+# Server steps
+sudo apt-get install libboost-all-dev
+  450  sudo apt install cmake
+  451  sudo apt install git
+  452  cd VSOMEIP
+  453  git clone https://github.com/GENIVI/vsomeip.git
+  454  cd vsomeip
+  455  mkdir build
+  456  cd build
+  457  cmake
+  458  cmake ..
+  459  make
+  460  cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/fev/Documents/VSOMEIP/vsomeip/build/examples/hello_world ..
+  461  cd examples
+  462  make
+  463  make install
+  464  LD_LIBRARY_PATH=//home/fev/Documents/VSOMEIP/vsomeip/build \
+  465  cd hello_world
+  LD_LIBRARY_PATH=/home/fev/Documents/VSOMEIP/vsomeip/build VSOMEIP_CONFIGURATION=../../../examples/hello_world/helloworld-local-service.json VSOMEIP_APPLICATION_NAME=World ./hello_world_service
+  
+
+
+
+
+#Client Steps
+cd Documents
+  451  cd VSOMEIP
+  452  cd build
+  453  cd vsomeip
+  454  cd build
+  455  cd examples
+  456  cd hello_world
+  457  LD_LIBRARY_PATH=/home/fev/Documents/VSOMEIP/vsomeip/build VSOMEIP_CONFIGURATION=../../../examples/hello_world/helloworld-local-client.json VSOMEIP_APPLICATION_NAME=Hello ./hello_world_client
+  
+  
+ 
+******************Request-Response ************************************************  
+#Server steps
+
+  LD_LIBRARY_PATH=/home/fev/Documents/VSOMEIP/vsomeip/build VSOMEIP_CONFIGURATION=../../config/vsomeip-local-service.json VSOMEIP_APPLICATION_NAME=service-sample ./response-sample
+
+#Client steps
+
+  LD_LIBRARY_PATH=/home/fev/Documents/VSOMEIP/vsomeip/build VSOMEIP_CONFIGURATION=../../config/vsomeip-local-client.json VSOMEIP_APPLICATION_NAME=client-sample ./request-sample
+
+
+******************Notify-Subscribe*************************************************
+
+#Server steps
+
+  LD_LIBRARY_PATH=/home/fev/Documents/VSOMEIP/vsomeip/build VSOMEIP_CONFIGURATION=../../config/vsomeip-local-service.json VSOMEIP_APPLICATION_NAME=service-sample ./notify-sample
+
+  
+#Client steps
+
+
+   LD_LIBRARY_PATH=/home/fev/Documents/VSOMEIP/vsomeip/build VSOMEIP_CONFIGURATION=../../config/vsomeip-local-client.json VSOMEIP_APPLICATION_NAME=client-sample ./subscribe-sample
+
+
+
+
+
+*************************************************************************************************************
+# For solving Configuration module could not be loaded error  ------------------>>>>>
+
+Configuration module could not be loaded!
+
+can be fixed by running
+
+sudo ldconfig
+
+to refresh the library cache of your linux system. You can check if the libraries are included in the cache (and can be found when you run your program) with this command:
+
+ldconfig -p | grep libvsomeip
+
+******************Request-Response ************************************************  
+
+#serversteps in two pc's
+
+VSOMEIP_CONFIGURATION=../config/vsomeip-local-service.json VSOMEIP_APPLICATION_NAME=service-sample ./response
+
+#Client steps in two pc's
+
+VSOMEIP_CONFIGURATION=../config/vsomeip-local-client.json VSOMEIP_APPLICATION_NAME=client-sample ./request
+ 
+
+
