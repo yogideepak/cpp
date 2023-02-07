@@ -3,7 +3,7 @@ sudo apt install cmake
 sudo apt install git
 sudo apt-get install libboost-all-dev
 cd /home/devops/sdk
-git clone http://172.22.246.36/connectivity-and-cloud/dev_team/final_cpp_aws_someip_app.git
+#git clone http://172.22.246.36/connectivity-and-cloud/dev_team/final_cpp_aws_someip_app.git
 
 cd final_cpp_aws_someip_app/
 sudo sh ev_vsomeip.sh
